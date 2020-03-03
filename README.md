@@ -16,7 +16,6 @@ Welcome to Plutonium | V ~ B.1.0.0
 
 ```lua
 --[[
-
                        ▄█▄
                        █████████████▄
                        ███        ███
@@ -28,6 +27,7 @@ Welcome to Plutonium | V ~ B.1.0.0
                        ███              ███       ███
                        ███              ▀██▄     ▄██▀
                        ▀█▀                ▀███████▀
+
 
                      All import code is from Hydroxide                
        thanks to the hydroxide team for letting anyone use there code 
@@ -45,18 +45,14 @@ Welcome to Plutonium | V ~ B.1.0.0
 ]]--
 local import = function(toimport)
     if type(toimport) == "string" then
-        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/nrv-ous/Hydroxide/master/" .. toimport))()
+        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Masterzz-Developer/Plutonium/master/" .. toimport))()
     else 
         return game:GetObjects("rbxassetid://" .. toimport)[1]
     end
 end
--- getgenv().oh = {}
--- oh.gui = import(4055219910)
--- import("visuals.lua")
--- oh.initialize()
 
 local gamessupported = game.workspace.Name
-if gamessupported == 'name here' then
-    
+if gamessupported == 'BloxHuntnamehere' then
+    import("BloxHunt.lua")
 end
 ```
