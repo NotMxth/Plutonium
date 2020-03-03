@@ -21,24 +21,20 @@
                understand the code feel free to contact use at
 
      Any things else you want to know check out our website and discord
-         Discord:    
+         Discord:    https://discord.gg/5rtFxpv
          Website:    
 
                 And a great thanks from the Plutonium Team <3
 ]]--
 local import = function(toimport)
     if type(toimport) == "string" then
-        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/nrv-ous/Hydroxide/master/" .. toimport))()
+        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Masterzz-Developer/Plutonium/master/" .. toimport))()
     else 
         return game:GetObjects("rbxassetid://" .. toimport)[1]
     end
 end
--- getgenv().oh = {}
--- oh.gui = import(4055219910)
--- import("visuals.lua")
--- oh.initialize()
 
-local gamessupported = {}
-if gamessupported == game.workspace.Name then
-    
+local gamessupported = game.workspace.Name
+if gamessupported == 'BloxHuntnamehere' then
+    import("BloxHunt.lua")
 end
