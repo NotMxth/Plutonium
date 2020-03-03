@@ -1,10 +1,11 @@
 # Plutonium
 Welcome to Plutonium | V ~ B.1.0.0
 
-## <a href="https://github.com/nrv-ous/Hydroxide/blob/master/main.lua"><b>main.lua</b></a>
+## <a href="https://github.com/nrv-ous/Hydroxide/blob/master/main.lua"><b>Main.lua</b></a>
 
 ```lua
 --[[
+
                        ▄█▄
                        █████████████▄
                        ███        ███
@@ -16,7 +17,6 @@ Welcome to Plutonium | V ~ B.1.0.0
                        ███              ███       ███
                        ███              ▀██▄     ▄██▀
                        ▀█▀                ▀███████▀
-
 
                      All import code is from Hydroxide                
        thanks to the hydroxide team for letting anyone use there code 
