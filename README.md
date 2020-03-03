@@ -1,14 +1,14 @@
 # Plutonium
 Welcome to Plutonium | V ~ B.1.0.0
 
-Supported Games
-# [Blox Hunt] 
+# Supported Games
+ [Blox Hunt] 
 + Tazer Anyone
 + Energy Fill
 + Health Fill
 + Walkspeed
 
-# [Universal] 
+ [Universal] 
 + Esp
 + Aimbot
 
