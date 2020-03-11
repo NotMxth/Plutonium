@@ -56,3 +56,10 @@ if gamessupported == 'BloxHuntnamehere' then
     import("BloxHunt.lua")
 end
 ```
+# First Time
+If it is your first time please use 
+```lua
+_G.FirstTime = true```
+and if it is not your first time please use
+```lua
+_G.FirstTime = false```
