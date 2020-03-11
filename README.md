@@ -59,7 +59,9 @@ end
 # First Time
 If it is your first time please use 
 ```lua
-_G.FirstTime = true```
+_G.FirstTime = true
+```
 and if it is not your first time please use
 ```lua
-_G.FirstTime = false```
+_G.FirstTime = false
+```
