@@ -1,40 +1,32 @@
 --[[
-                       ▄█▄
-                       █████████████▄
-                       ███        ███
-                       ███        ███
-                       ███        ███   ██▄       ▄██
-                       █████████████▀   ███       ███
-                       ███              ███       ███
-                       ███              ███       ███
-                       ███              ███       ███
-                       ███              ▀██▄     ▄██▀
-                       ▀█▀                ▀███████▀
-
-
-                     All import code is from Hydroxide                
-       thanks to the hydroxide team for letting anyone use there code 
-       Welcome to Plutonium, a free script hub that was in development
-         sense 3/1/20. Feel free to use any of the code you see and 
-        make any changes or copys of the code as you wish all we want 
-          in return is that you give use credits sorry if you dont
-               understand the code feel free to contact use at
-
-     Any things else you want to know check out our website and discord
-         Discord:    https://discord.gg/5rtFxpv
-         Website:    
-
-                And a great thanks from the Plutonium Team <3
+Documentation for New lumbsmasher UILIB
 ]]--
-local import = function(toimport)
-    if type(toimport) == "string" then
-        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Masterzz-Developer/Plutonium/master/" .. toimport))()
-    else 
-        return game:GetObjects("rbxassetid://" .. toimport)[1]
-    end
-end
 
-local gamessupported = game.workspace.Name
-if gamessupported == 'BloxHuntnamehere' then
-    import("BloxHunt.lua")
-end
+-- lets start by creating a GUI as a whole so what you would need to  do to make the first instance would be
+local main = library:Create('Name Here')
+
+-- now lets start by creating a GUI section
+local section = main:CreateTab('Name Here')
+
+-- now lets make buttons and such for the gui buttons are done by this
+section:CreateButton('Name Here',function()
+  --  what to execute here
+ end)
+
+-- TextBox
+section:CreateTextBox('Name Here',function(varible/arg)
+ -- what to execute here    
+end)
+
+-- Toggle
+section:CreateToggle('Name Here','Description here',function(varible/arg)
+    -- boolean function here
+end)
+
+-- Dropdown
+local drop = section:CreateDropwdown('Name Here')
+
+-- add to dropdown  by doing 
+drop:Addbutton('Name Here',function()
+  -- same as button
+end)
