@@ -1,0 +1,52 @@
+local Unlocked
+
+local mt = getrawmetatable(game)
+local old_call = mt.__namecall
+
+if setreadonly then setreadonly(mt, false) elseif make_writeable then make_writeable(mt) end
+
+mt.__namecall = newcclosure(function(self, ...)
+	local args = {...}
+	local method = getnamecallmethod()
+	if method == "FireServer" then
+		if string.len(self.Name) > 35 then
+			if not Unlocked then
+				Unlocked = true
+				for i,v in next, _G.UnlockSkins do
+					local Skip
+					for i2,v2 in next, args[1] do
+						if v[1] == v2[1] then
+							Skip = true
+						end
+					end
+					if not Skip then
+						table.insert(args[1], v)
+					end
+				end
+			end
+		return
+		end
+		if self.Name == "DataEvent" and args[1][4] then
+			local Skin = string.split(args[1][4][1], "_")[2]
+			if args[1][2] == "Both" then
+				game.Players.LocalPlayer.SkinFolder.CTFolder[args[1][3]].Value = Skin
+				game.Players.LocalPlayer.SkinFolder.TFolder[args[1][3]].Value = Skin
+			else
+				game.Players.LocalPlayer.SkinFolder[args[1][2] .. "Folder"][args[1][3]].Value = Skin
+			end
+		end
+	end
+	if method == "InvokeServer" and self.Name == "Hugh" then
+		return
+	end
+	return old_call(self, unpack(args))
+end)
+
+local CTClone = game.Players.LocalPlayer.SkinFolder.CTFolder:Clone()
+local TClone = game.Players.LocalPlayer.SkinFolder.TFolder:Clone()
+
+game.Players.LocalPlayer.SkinFolder.CTFolder:Destroy()
+game.Players.LocalPlayer.SkinFolder.TFolder:Destroy()
+
+CTClone.Parent = game.Players.LocalPlayer["SkinFolder"]
+TClone.Parent = game.Players.LocalPlayer["SkinFolder"]
