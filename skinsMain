@@ -1,0 +1,191 @@
+local a = game.Players.LocalPlayer
+local b
+local c
+local d
+local e
+local f
+local g = getsenv(game.Players.LocalPlayer.PlayerGui.Client)
+local h = game.ReplicatedStorage
+local i = getrawmetatable(game)
+local j = i.__namecall
+
+setreadonly(i,false)
+
+i.__namecall = newcclosure(function(self,...)
+	local l = {...}
+	if getnamecallmethod() == "FireServer" and string.len(self.Name)==38 then
+		return nil
+	end
+	return j(self,...)
+end)
+
+setreadonly(i,true)
+
+local m = {}
+local StrappedGlove = {}
+local HandwrapsGlove = {}
+local SportsGlove = {}
+local FingerlessGlove = {}
+
+for _,v in pairs(game.ReplicatedStorage.Skins:GetChildren())do
+	for _,c in pairs(v:GetChildren())do
+		table.insert(m,{v.Name.. "_" ..c.Name})
+	end 
+end
+
+for i,v in pairs(game.ReplicatedStorage.Gloves:GetChildren()) do
+	if v.Name == "Wraps"
+	or v.Name == "Guts"
+	or v.Name == "MMA"
+	or v.Name == "Wetland"
+	or v.Name == "Ghoul Hex"
+	or v.Name == "Phantom Hex"
+	or v.Name == "Spector Hex"
+	or v.Name == "Orange Hex"
+	or v.Name == "Purple Hex"
+	or v.Name == "Green Hex"
+	or v.Name == "Toxic Nitro" then
+		table.insert(HandwrapsGlove, {v.Name})
+	end 
+end
+
+for i,v in pairs(game.ReplicatedStorage.Gloves:GetChildren()) do
+	if v.Name == "Scapter"
+	or v.Name == "Patch"
+	or v.Name == "Digital"
+	or v.Name == "Crystal" then
+		table.insert(FingerlessGlove, {v.Name})
+	end
+end
+
+for i,v in pairs(game.ReplicatedStorage.Gloves:GetChildren()) do
+	if v.Name == "Hazard"
+	or v.Name == "Hallows"
+	or v.Name == "Majesty"
+	or v.Name == "Royal"
+	or v.Name == "Weeb"
+	or v.Name == "CottonTail"
+	or v.Name == "RSL" then
+		table.insert(SportsGlove, {v.Name})
+	end
+end
+
+for i,v in pairs(h.Gloves:GetChildren()) do
+	if v.Name == "Grim"
+	or v.Name == "Wisk"
+	or v.Name == "Molten"
+	or v.Name == "Kringle"
+	or v.Name == "Racer" then
+		table.insert(StrappedGlove, {v.Name})
+	end
+end
+
+for r=1,#StrappedGlove do table.insert(m,{"Strapped Glove_"..unpack(StrappedGlove[r])})end
+for r=1,#SportsGlove do table.insert(m,{"Sports Glove_"..unpack(SportsGlove[r])})end
+for r=1,#FingerlessGlove do table.insert(m,{"Fingerless Glove_"..unpack(FingerlessGlove[r])})end
+for r=1,#HandwrapsGlove do table.insert(m,{"Handwraps_"..unpack(HandwrapsGlove[r])})end
+
+table.insert(m, {"CTKnife_Stock"})
+table.insert(m, {"TKnife_Stock"})
+
+for i,v in pairs(h.Skins:GetChildren()) do
+	if v.Name ~= "Flip Knife"
+	and v.Name ~= "Bayonet"
+	and v.Name ~= "Falchion Knife"
+	and v.Name ~= "Karambit"
+	and v.Name ~= "Huntsman Knife"
+	and v.Name ~= "Banana"
+	and v.Name ~= "Crowbar"
+	and v.Name ~= "Butterfly Knife" then
+		table.insert(m, {v.Name.."_Stock"})
+	end
+end
+
+g.CurrentInventory = m
+
+local v = game.Players.LocalPlayer.SkinFolder.TFolder:Clone()
+local w = game.Players.LocalPlayer.SkinFolder.CTFolder:Clone()
+
+v.Parent = game.Players.LocalPlayer.SkinFolder
+w.Parent = game.Players.LocalPlayer.SkinFolder
+wait(1)
+game.Players.LocalPlayer.SkinFolder.TFolder:Destroy()
+game.Players.LocalPlayer.SkinFolder.CTFolder:Destroy()
+
+local x = getrawmetatable(game)
+local y = x.__namecall
+setreadonly(x,false)
+local z
+local A
+local B
+x.__namecall = newcclosure(function(self,...)
+local l = {...}
+if getnamecallmethod() == "FireServer" and self.Name == "DataEvent" then
+	for r,s in next,l do 
+		B = s[2]
+		A = s[3]
+		table.foreach(s[4],
+		function(C,s)
+		z = s
+	print(B,A,z)
+end)
+--
+local D = game.Players.LocalPlayer.SkinFolder.CTFolder
+local E = game.Players.LocalPlayer.SkinFolder.TFolder
+
+if B == "CT" or B == "Both" then
+
+for t,u in pairs(D:GetChildren()) do
+	if A=='Gut Knife'
+	or A=='Butterfly Knife'
+	or A=='Falchion Knife'
+	or A=='Bayonet'
+	or A=='Huntsman Knife'
+	or A=='Karambit'
+	or A=='Banana'
+	or A=="Crowbar"
+	or A=='Flip Knife'
+	or A=='Bearded Axe'
+	or A=='Sickle'
+	or A=='Cleaver'
+	and u.Name=="Knife"
+	then
+		local F = string.split(z,"_")
+		u.Value = tostring(F[2])
+	elseif u.Name == A then
+		local F = string.split(z,"_")
+		u.Value = tostring(F[2])
+	end
+	end
+end
+
+if B=="T" or B=="Both" then
+	for G,H in pairs(E:GetChildren()) do
+		if A=='Gut Knife'
+		or A=='Butterfly Knife'
+		or A=='Falchion Knife'
+		or A=='Bayonet'
+		or A=='Huntsman Knife'
+		or A=='Karambit'
+		or A=='Banana'
+		or A=='Crowbar'
+		or A=='Flip Knife'
+		or A=='Bearded Axe'
+		or A=='Sickle'
+		or A=='Cleaver'
+		and H.Name=="Knife"
+		then
+			local F = string.split(z,"_")
+			H.Value = tostring(F[2])
+		elseif H.Name == A then 
+			local F = string.split(z,"_")
+			H.Value = tostring(F[2])
+		end 
+	end 
+end 
+end
+end
+
+return y(self,...)
+end)
+setreadonly(x,true)
